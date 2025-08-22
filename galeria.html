@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de Postres</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .card button {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #ab47bc;
+        }
+
+        #cart {
+            margin-top: 40px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart li {
+            margin: 5px 0;
+        }
+
+        #confirm {
+            margin-top: 20px;
+            background-color: #4a148c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #confirm:hover {
+            background-color: #7b1fa2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Galería de Postres</h1>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150.png?text=Cupcake" alt="Cupcake">
+            <h3>Cupcake de Vainilla</h3>
+            <p>Suave, esponjoso y con cobertura de crema 💜</p>
+            <button onclick="addToCart('Cupcake de Vainilla')">Agregar al pedido</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150.png?text=Macaron" alt="Macaron">
+            <h3>Macarons de Frambuesa</h3>
+            <p>Delicados y dulces, perfectos para regalar</p>
+            <button onclick="addToCart('Macarons de Frambuesa')">Agregar al pedido</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150.png?text=Pastelito" alt="Pastelito">
+            <h3>Pastelito de Chocolate</h3>
+            <p>Relleno cremoso y cobertura intensa 🍫</p>
+            <button onclick="addToCart('Pastelito de Chocolate')">Agregar al pedido</button>
+        </div>
+    </div>
+
+    <div id="cart">
+        <h2>Tu pedido</h2>
+        <ul id="cart-list"></ul>
+        <button id="confirm" onclick="confirmOrder()">Confirmar pedido</button>
+    </div>
+
+    <script>
+        const cartList = document.getElementById('cart-list');
+
+        function addToCart(item) {
+            const li = document.createElement('li');
+            li.textContent = item;
+            cartList.appendChild(li);
+        }
+
+        function confirmOrder() {
+            if (cartList.children.length === 0) {
+                alert('Tu carrito está vacío.');
+            } else {
+                // Simula confirmación y redirige a orden.html
+                alert('¡Gracias por tu pedido! 💜');
+                window.location.href = 'orden.html';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
