@@ -2,55 +2,168 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orden Confirmada</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f3e5f5;
-            color: #4a148c;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Cake</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3e5f5;
+      color: #4a148c;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+    /* Animación de entrada */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
 
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .order-btn {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
+    .fade-in {
+      animation: fadeSlideUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
 
-        .order-btn:hover {
-            background-color: #ab47bc;
-            color: #fffde7;
-            transform: scale(1.05);
-        }
-    </style>
+    header {
+      background-color: #ce93d8;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d500f9;
+      text-decoration: underline;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero img {
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .hero-text {
+      max-width: 400px;
+      margin-left: 40px;
+    }
+
+    .hero-text h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .order-btn {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #ab47bc;
+      color: #fffde7;
+      transform: scale(1.05);
+    }
+
+    .products {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+      background-color: #e1bee7;
+    }
+
+    .product {
+      text-align: center;
+    }
+
+    .product img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>¡Gracias por tu pedido!</h1>
-    <p>Tu pastel está en camino 💜</p>
-    <a href="index.html" class="order-btn">Volver al inicio</a>
+  <header class="fade-in">
+    <h1>PURPLE CAKE</h1>
+    <nav>
+      <a href="#">INICIO</a>
+      <a href="#">NOSOTROS</a>
+      <a href="#">SERVICIOS</a>
+      <a href="#">CONTACTO</a>
+    </nav>
+  </header>
+
+  <section class="hero fade-in">
+    <img src="Copilot_20250817_185501.png?text=Purple+Cake" alt="Purple Cat" />
+    <div class="hero-text">
+      <h2>Delicious Cakes & Pastries</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <a href="galeria.html" class="order-btn">ORDENAR AHORA</a>
+    </div>
+  </section>
+
+  <section class="products fade-in">
+    <div class="product">
+      <img src="https://via.placeholder.com/150.png?text=Cupcakes" alt="Cupcakes" />
+      <h3>CUPCAKES</h3>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150.png?text=Pastries" alt="Pastries" />
+      <h3>PASTELITOS</h3>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150.png?text=Macarons" alt="Macarons" />
+      <h3>MACARONS</h3>
+    </div>
+  </section>
 </body>
 
 </html>
